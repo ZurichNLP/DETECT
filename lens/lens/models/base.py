@@ -474,6 +474,7 @@ class LensModel(ptl.LightningModule, metaclass=abc.ABCMeta):
         """
         if stage in (None, "fit"):
             train_dataset = self.read_training_data(self.hparams.train_data[0])
+            self.train_dataset = train_dataset
 
             self.validation_sets = [
                 self.read_validation_data(d) for d in self.hparams.validation_data
