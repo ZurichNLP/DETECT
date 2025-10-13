@@ -17,5 +17,5 @@ from .roberta import RoBERTaEncoder
 
 str2encoder = {
     "BERT": BERTEncoder, 
-    "RoBERTa": RoBERTaEncoder
+    "XLM-RoBERTa": RoBERTaEncoder
 }
