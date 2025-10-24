@@ -19,7 +19,7 @@ RegressionMetric
     Regression Metric that learns to predict a quality assessment by looking
     at source, translation and reference.
 """
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 import pandas as pd
 import torch
@@ -62,7 +62,7 @@ class RegressionMetricMultiReference(LensModel):
         encoder_learning_rate: float = 1e-05,
         learning_rate: float = 3e-05,
         layerwise_decay: float = 0.95,
-        encoder_model: str = "XLM-RoBERTa",
+        encoder_model: str = "RoBERTa",
         pretrained_model: str = "xlm-roberta-base",
         pool: str = "avg",
         layer: Union[str, int] = "mix",
@@ -74,7 +74,8 @@ class RegressionMetricMultiReference(LensModel):
         activations: str = "Tanh",
         final_activation: Optional[str] = None,
         load_weights_from_checkpoint: Optional[str] = None,
-        topk: int = 1,
+        topk: int = 1,                  
+        **kwargs: Any,               # <- swallow any other legacy keys
     ) -> None:
         super().__init__(
             nr_frozen_epochs,
@@ -92,10 +93,9 @@ class RegressionMetricMultiReference(LensModel):
             train_data,
             validation_data,
             load_weights_from_checkpoint,
-            "regression_metric_multi_ref",
+            "regression_metric_multi_ref"
         )
         self.save_hyperparameters()
-
         self.topk = topk
         print(f'Using LENS with topk={self.topk}')
 
