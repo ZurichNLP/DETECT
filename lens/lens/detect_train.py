@@ -13,8 +13,10 @@ from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning import seed_everything
 seed_everything(42)
 
-train_path = ["data/LENS_train_set_w_features.csv"]
-val_path = ["data/LENS_val_set_w_features.csv"]
+# create these files through Dataset_Generation.ipynb
+# Note: additional features are not used in final DETECT and not added to the dataset, but the repository supports making a custom neural network with more features.
+train_path = ["lens/data/SimpEvalDE_train_train.csv.csv"]
+val_path = ["lens/data/SimpEvalDE_train_val.csv"]
 
 # Early stopping
 early_stopping = EarlyStopping(
