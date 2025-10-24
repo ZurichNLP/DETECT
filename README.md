@@ -1,7 +1,7 @@
 # DETECT
 
 
-This repository contains the **datasets** and **metric checkpoints** from our paper:  
+This repository contains the **datasets** and **metric umplementation** from our paper:  
 **[DETECT: Determining Ease and Textual Clarity of German Text Simplifications](TBD)**
 
 ---
