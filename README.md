@@ -22,3 +22,16 @@ Implements:
 Please refer to [`lens/README.md`](lens/README.md) for detailed usage instructions,  
 model loading, and scoring examples.
 
+## 📚 Citation
+
+If you use DETECT in your work, please cite:
+
+```
+@inproceedings{korobeynikova2026detect,
+  title     = {DETECT: Determining Ease and Textual Clarity of German Text Simplifications},
+  author    = {Korobeynikova, Maria and Battisti, Alessia and Fischer, Lukas and Gao, Yingqiang},
+  booktitle = {Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages     = {2852--2882},
+  year      = {2026}
+}
+```
